@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Nikhil Sharma's Website.">
+  <meta name="license" content="Website : Nikhil Sharma">
+  <meta name="keywords" content="Nikhil Sharma, Nikhil, Sharma, ennsharma, bobflanagan, sharmaster96">
+  <meta name="robots" content="index,follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2196f3">
+  <meta name="google-site-verification" content="I4_hULZxkuy_0GtDQ3cPNPsyb1FLK-L2I5XyXqDzHi4" />
+  <title>Nikhil Sharma</title>
+  <link rel="dns-prefetch" href="//ennsharma.com/">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css" media="screen" sizes="any">
+  <link rel="icon" href="favicon.ico" type="image/x-icon"> 
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Francisco",
+        "addressRegion": "CA",
+      },
+      "email": "mailto:ennsharma@berkeley.edu",
+      "image": "nikhil.jpg",
+      "jobTitle": "Software Engineer",
+      "name": "Nikhil Sharma",
+      "url": "http://www.ennsharma.com",
+      "sameAs": ["https://twitter.com/ennsharma",
+        "https://www.facebook.com/ennsharma",
+        "https://github.com/sharmaster96",
+        "http://linkedin.com/in/sharmaster96",
+        "https://quora.com/Nikhil-Sharma-868"
+      ]
+    }
+
+  </script>
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-20640332-6', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+</head>
+
+<body>
+  <aside class="profile-card">
+    <header>
+      <a onclick="trackClick('profilepic')" href="https://sharmaster96.github.io/website/" target="_blank" rel="noopener">
+        <img src="./assets/nikhil.jpg" alt="nikhil profile pic" />
+      </a>
+      <h1>Nikhil Sharma</h1>
+      <h2>Researcher, Developer, Educator.</h2>
+    </header>
+    <div class="profile-bio">
+      <p>Master's student at UC Berkeley researching topics in machine learning, privacy, and blockchain.</p>
+    </div>
+    <ul class="profile-social-links">
+      <li onclick="trackClick()">
+        <a href="assets/cv/nikhil_cv.pdf" target="_blank" rel="noopener">
+          <img src="assets/svg/cv.svg">
+        </a>
+      </li>
+      <li onclick="trackClick()">
+        <a href="https://www.linkedin.com/in/sharmaster96" target="_blank" rel="noopener">
+          <img src="assets/svg/linkedin.svg">
+        </a>
+      </li>
+      <li onclick="trackClick()">
+        <a href="https://www.github.com/sharmaster96" target="_blank" rel="noopener">
+          <img src="assets/svg/github.svg">
+        </a>
+      </li>
+      <li onclick="trackClick()">
+        <a href="https://www.quora.com/profile/Nikhil-Sharma-868" target="_blank" rel="noopener">
+          <img src="assets/svg/quora.svg">
+        </a>
+      </li>
+      <li onclick="trackClick()">
+        <a href="https://www.instagram.com/sharmaster96" target="_blank" rel="noopener">
+          <img src="assets/svg/instagram.svg">
+        </a>
+      </li>
+      <li onclick="trackClick()">
+        <a href="https://www.twitter.com/ennsharma" target="_blank" rel="noopener">
+          <img src="assets/svg/twitter.svg">
+        </a>
+      </li>
+    </ul>
+  </aside>
+</body>
+<script type="text/javascript">
+  // events tracking with GA
+  // ga('send', 'event', [eventCategory], [eventAction], [eventLabel], [eventValue], [fieldsObject]);
+  function trackClick() {
+    ga('send', 'event', 'button', 'click', event.target.href, 1);
+  }
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
+
+</script>
+
+</html>
