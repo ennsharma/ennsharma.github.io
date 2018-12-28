@@ -66,12 +66,26 @@
 
     gtag('config', 'UA-131425668-1');
   </script>
+  <script>
+  /**
+  * Function that tracks a click on an outbound link in Analytics.
+  * This function takes a valid URL string as an argument, and uses that URL string
+  * as the event label. Setting the transport method to 'beacon' lets the hit be sent
+  * using 'navigator.sendBeacon' in browser that support it.
+  */
+  var trackOutboundLink = function(url) {
+     ga('send', 'event', 'outbound', 'click', url, {
+       'transport': 'beacon',
+       'hitCallback': function(){document.location = url;}
+     });
+  }
+  </script>
 </head>
 
 <body>
   <aside class="profile-card">
     <header>
-      <a onclick="trackClick('profilepic')" href="https://sharmaster96.github.io/website/" target="_blank" rel="noopener">
+      <a href="https://sharmaster96.github.io" onclick="trackOutboundLink('https://sharmaster96.github.io'); return false;" target="_blank" rel="noopener">
         <img src="./assets/nikhil.jpg" alt="nikhil profile pic" />
       </a>
       <h1>Nikhil Sharma</h1>
@@ -81,49 +95,37 @@
       <p>Master's student at UC Berkeley researching topics in machine learning, privacy, and blockchain.</p>
     </div>
     <ul class="profile-social-links">
-      <li onclick="trackClick()">
+      <li>
         <a href="assets/cv/nikhil_cv.pdf" target="_blank" rel="noopener">
           <img src="assets/svg/cv.svg">
         </a>
       </li>
-      <li onclick="trackClick()">
-        <a href="https://www.linkedin.com/in/sharmaster96" target="_blank" rel="noopener">
+      <li>
+        <a href="https://www.linkedin.com/in/sharmaster96" onclick="trackOutboundLink('https://www.linkedin.com/in/sharmaster96'); return false;" target="_blank" rel="noopener">
           <img src="assets/svg/linkedin.svg">
         </a>
       </li>
-      <li onclick="trackClick()">
-        <a href="https://www.github.com/sharmaster96" target="_blank" rel="noopener">
+      <li>
+        <a href="https://www.github.com/sharmaster96" onclick="trackOutboundLink('https://www.github.com/sharmaster96'); return false;" target="_blank" rel="noopener">
           <img src="assets/svg/github.svg">
         </a>
       </li>
-      <li onclick="trackClick()">
-        <a href="https://www.quora.com/profile/Nikhil-Sharma-868" target="_blank" rel="noopener">
+      <li>
+        <a href="https://www.quora.com/profile/Nikhil-Sharma-868" onclick="trackOutboundLink('https://www.quora.com/profile/Nikhil-Sharma-868'); return false;" target="_blank" rel="noopener">
           <img src="assets/svg/quora.svg">
         </a>
       </li>
-      <li onclick="trackClick()">
-        <a href="https://www.instagram.com/sharmaster96" target="_blank" rel="noopener">
+      <li>
+        <a href="https://www.instagram.com/sharmaster96" onclick="trackOutboundLink('https://www.instagram.com/sharmaster96'); return false;" target="_blank" rel="noopener">
           <img src="assets/svg/instagram.svg">
         </a>
       </li>
-      <li onclick="trackClick()">
-        <a href="https://www.twitter.com/ennsharma" target="_blank" rel="noopener">
+      <li>
+        <a href="https://www.twitter.com/ennsharma" onclick="trackOutboundLink('https://www.twitter.com/ennsharma'); return false;" target="_blank" rel="noopener">
           <img src="assets/svg/twitter.svg">
         </a>
       </li>
     </ul>
   </aside>
 </body>
-<script type="text/javascript">
-  // events tracking with GA
-  // ga('send', 'event', [eventCategory], [eventAction], [eventLabel], [eventValue], [fieldsObject]);
-  function trackClick() {
-    ga('send', 'event', 'button', 'click', event.target.href, 1);
-  }
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js');
-  }
-
-</script>
-
 </html>
